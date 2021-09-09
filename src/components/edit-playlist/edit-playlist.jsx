@@ -16,7 +16,7 @@ import CategoriesDropdown from "../util/forms/multiselect-dropdown/categories/ca
  * The edit playlist component.
  *
  * @returns {object}
- * The edit playlist page.
+ *   The edit playlist page.
  */
 function EditPlaylist() {
   const { t } = useTranslation("common");
@@ -37,7 +37,7 @@ function EditPlaylist() {
    * Load content from fixture.
    */
   useEffect(() => {
-    // @TODO load real content.
+    // @TODO: load real content.
     if (!newPlaylist) {
       fetch(`/fixtures/playlists/playlist.json`)
         .then((response) => response.json())
@@ -71,13 +71,13 @@ function EditPlaylist() {
   /**
    * Handles validations, and goes back to list.
    *
-   * @todo make it save.
    * @param {object} e
    * the submit event.
    * @returns {boolean}
    * Boolean indicating whether to submit form.
    */
   function handleSubmit(e) {
+    // @TODO: Make it save.
     e.preventDefault();
     setErrors([]);
     let returnValue = false;

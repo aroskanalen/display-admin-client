@@ -6,9 +6,9 @@ import "react-color-palette/lib/css/styles.css";
 /**
  * @param {object} props
  * The props.
- * @param {string}  props.color
+ * @param {string} props.color
  * The color, a hex string or null.
- * @param {boolean}  props.show
+ * @param {boolean} props.show
  * Whether to show the color picker.
  * @param  {Function} props.handleChange
  * Callback for picked color.
@@ -18,11 +18,13 @@ import "react-color-palette/lib/css/styles.css";
  * The color picker.
  */
 function ColorPicker({ color, show, handleChange, closeColorPicker }) {
+  const ref = useRef();
+  const [inputColor] = useColor("hex", color ?? "");
+
   if (!show) {
     return <></>;
   }
-  const ref = useRef();
-  const [inputColor] = useColor("hex", color ?? "");
+
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       // If the menu is open and the clicked target is not within the menu,
@@ -37,6 +39,7 @@ function ColorPicker({ color, show, handleChange, closeColorPicker }) {
       document.removeEventListener("mousedown", checkIfClickedOutside);
     };
   }, []);
+
   /**
    * @param {object} selectedColor
    * The selected color object.
@@ -71,4 +74,5 @@ ColorPicker.propTypes = {
   handleChange: PropTypes.func.isRequired,
   closeColorPicker: PropTypes.func.isRequired,
 };
+
 export default ColorPicker;

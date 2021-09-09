@@ -1,6 +1,5 @@
 import { React } from "react";
 import PropTypes from "prop-types";
-
 import { Button } from "react-bootstrap";
 
 /**
@@ -43,4 +42,5 @@ ColorPreview.propTypes = {
   label: PropTypes.string.isRequired,
   openColorPicker: PropTypes.func.isRequired,
 };
+
 export default ColorPreview;

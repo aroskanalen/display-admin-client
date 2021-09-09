@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Modal from "react-bootstrap/Modal";
 import ModalDialog from "../util/modal/modal-dialog";
 import MediaList from "../media-list/media-list";
+
 /**
  * Delete modal component, a modal that deletes elements.
  *

@@ -26,7 +26,7 @@ function SlidesDropdown({ handleSlideSelection, selected, name, errors }) {
    * Load content from fixture.
    */
   useEffect(() => {
-    // @TODO load real content.
+    // @TODO: load real content.
     fetch(`/fixtures/slides/slides.json`)
       .then((response) => response.json())
       .then((jsonData) => {

@@ -1,17 +1,13 @@
 import PropTypes from "prop-types";
 
 /**
- * @param {Array} requiredFields
- * The fields that are required.
- * @param {object} formStateObject
- * The object to validate.
- * @returns {object}
- * A list of validationerrors.
+ * @param {Array} requiredFields The fields that are required.
+ * @param {object} formStateObject The object to validate.
+ * @returns {object} A list of validation errors.
  */
 function getFormErrors(requiredFields, formStateObject) {
   /**
-   * @param {string} field
-   * the string to check if is required image field.
+   * @param {string} field the string to check if is required image field.
    * @returns {boolean} whether it is an image field (name/description)
    */
   function isImageField(field) {

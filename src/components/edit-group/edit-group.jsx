@@ -30,7 +30,7 @@ function EditGroup() {
    * Load content from fixture.
    */
   useEffect(() => {
-    // @TODO load real content.
+    // @TODO: load real content.
     if (!newGroup) {
       fetch(`/fixtures/groups/group.json`)
         .then((response) => response.json())
@@ -60,13 +60,13 @@ function EditGroup() {
   /**
    * Handles validations, and goes back to list.
    *
-   * @todo make it save.
    * @param {object} e
    * the submit event.
    * @returns {boolean}
    * Boolean indicating whether to submit form.
    */
   function handleSubmit(e) {
+    // @TODO: make it save.
     e.preventDefault();
     setErrors([]);
     let returnValue = false;

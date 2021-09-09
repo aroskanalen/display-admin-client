@@ -12,7 +12,6 @@ import ContentHeader from "../util/content-header/content-header";
 import ContentBody from "../util/content-body/content-body";
 
 /**
-/**
  * The playlists list component.
  *
  * @returns {object}
@@ -54,7 +53,7 @@ function PlaylistsList() {
    * Load content from fixture.
    */
   useEffect(() => {
-    // @TODO load real content.
+    // @TODO: load real content.
     fetch(`/fixtures/playlists/playlists.json`)
       .then((response) => response.json())
       .then((jsonData) => {
@@ -156,7 +155,7 @@ function PlaylistsList() {
       key: "quick-edit",
       content: () => (
         <>
-          {/* @todo make quick edit modal */}
+          {/* @TODO: make quick edit modal */}
           <Button variant="primary">Quick edit</Button>
         </>
       ),
@@ -199,7 +198,7 @@ function PlaylistsList() {
    */
   // eslint-disable-next-line
   function handleDelete({ id, name }) {
-    // @TODO delete element
+    // @TODO: delete element
     setSelectedRows([]);
     setShowDeleteModal(false);
   }

@@ -46,7 +46,7 @@ function EditTheme() {
    * Load content from fixture.
    */
   useEffect(() => {
-    // @TODO load real content.
+    // @TODO: load real content.
     if (!newTheme) {
       fetch("/fixtures/themes/theme.json")
         .then((response) => response.json())
@@ -81,13 +81,13 @@ function EditTheme() {
   /**
    * Handles validations, and goes back to list.
    *
-   * @todo make it save.
    * @param {object} e
    * the submit event.
    * @returns {boolean}
    * Boolean indicating whether to submit form.
    */
   function handleSubmit(e) {
+    // @TODO: make it save.
     e.preventDefault();
     setErrors([]);
     let returnValue = false;

@@ -2,12 +2,15 @@ import { React } from "react";
 import PropTypes from "prop-types";
 
 /**
+ * @TODO: Missing comment. What does this component do?
+ *
  * @param {object} props
- * The props.
+ *   The props.
  * @param {Array} props.children
- * The children being passed from parent
+ *   The children being passed from parent.
+ *
  * @returns {object}
- * The Content header.
+ *   The Content body.
  */
 function ContentBody({ children }) {
   return (
