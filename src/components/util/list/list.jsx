@@ -77,34 +77,34 @@ function List({
   }
 
   /** @param {string} newSearchText Updates the search text state and url. */
-  function onSearch(newSearchText) {
+  const onSearch = (newSearchText) => {
     updateUrlParams("search", newSearchText);
-  }
+  };
 
   /** @param {string} isPublished Updates the search text state and url. */
-  function onIsPublished({ target }) {
+  const onIsPublished = ({ target }) => {
     updateUrlParams("published", target.value);
-  }
+  };
 
   /** @param {number} nextPage - The next page. */
-  function updateUrlAndChangePage(nextPage) {
+  const updateUrlAndChangePage = (nextPage) => {
     updateUrlParams("page", nextPage);
-  }
+  };
 
   /** @param {number} isPublished - Is published. */
-  function updateUrlPublished(isPublished) {
+  const updateUrlPublished = (isPublished) => {
     updateUrlParams("published", isPublished);
-  }
+  };
 
   /** @param {number} sortByInput - The next page. */
-  function updateUrlAndSort(sortByInput) {
+  const updateUrlAndSort = (sortByInput) => {
     const params = new URLSearchParams(search);
     params.delete("sort");
     params.delete("order");
     params.append("sort", sortByInput.path);
     params.append("order", sortByInput.order);
     history.replace({ search: params.toString() });
-  }
+  };
 
   /** Sets page from url using callback */
   useEffect(() => {

@@ -28,10 +28,12 @@ function SelectSlidesTable({ handleChange, name, slideId }) {
   const [onPlaylists, setOnPlaylists] = useState();
   const [searchText, setSearchText] = useState("");
   const [showInfoModal, setShowInfoModal] = useState(false);
+
   const { data: slides } = useGetV1SlidesQuery({
     title: searchText,
     itemsPerPage: searchText ? 10 : 0,
   });
+
   const { data } = useGetV1PlaylistsByIdSlidesQuery({ id: slideId });
 
   /** Map loaded data. */
@@ -51,46 +53,47 @@ function SelectSlidesTable({ handleChange, name, slideId }) {
    * @param {object} props - The props.
    * @param {object} props.target - The target.
    */
-  function handleAdd({ target }) {
+  const handleAdd = ({ target }) => {
     const { value, id } = target;
     setSelectedData(value);
     handleChange({
       target: { id, value: value.map((item) => item["@id"]) },
     });
-  }
+  };
 
   /** @param {Array} playlistArray The array of playlists. */
-  function openInfoModal(playlistArray) {
+  const openInfoModal = (playlistArray) => {
     setOnPlaylists(playlistArray);
     setShowInfoModal(true);
-  }
+  };
 
   /** Closes the info modal. */
-  function onCloseInfoModal() {
+  const onCloseInfoModal = () => {
     setShowInfoModal(false);
     setOnPlaylists();
-  }
+  };
 
   /**
    * Fetches data for the multi component
    *
    * @param {string} filter - The filter.
    */
-  function onFilter(filter) {
+  const onFilter = (filter) => {
     setSearchText(filter);
-  }
+  };
 
   /**
-   * Removes playlist from list of groups.
+   * Remove item from list of groups.
    *
    * @param {object} removeItem The item to remove.
    */
-  function removeFromList(removeItem) {
+  const removeFromList = (removeItem) => {
     const indexOfItemToRemove = selectedData
       .map((item) => {
         return item["@id"];
       })
       .indexOf(removeItem["@id"]);
+
     const selectedDataCopy = [...selectedData];
     selectedDataCopy.splice(indexOfItemToRemove, 1);
     setSelectedData(selectedDataCopy);
@@ -99,9 +102,10 @@ function SelectSlidesTable({ handleChange, name, slideId }) {
       value: selectedDataCopy.map((item) => item["@id"]),
       id: name,
     };
+
     handleChange({ target });
-  }
-  /* eslint-disable-next-line no-unused-vars */
+  };
+
   const columns = [
     {
       path: "title",
