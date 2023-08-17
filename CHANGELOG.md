@@ -10,6 +10,9 @@ All notable changes to this project will be documented in this file.
 - fix proptypes errors in console from paginationbutton
 - speed up cypress in GA and add tests of playing-component
 
+- [#210](https://github.com/os2display/display-admin-client/pull/210)
+  Use thumbnails for media list if they are set
+
 ## [1.3.3] - 2023-07-11
 
 - [#208](https://github.com/os2display/display-admin-client/pull/208)
